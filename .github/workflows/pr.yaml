@@ -7,7 +7,7 @@ on:
 
 jobs:
   quality:
-    uses: thibaultserti/gh-actions-reusable-workflows/.github/workflows/run-python-quality.yaml@feat/add-python-reusable-workflows
+    uses: thibaultserti/gh-actions-reusable-workflows/.github/workflows/run-python-quality.yaml@main
   docker-build:
     uses: thibaultserti/gh-actions-reusable-workflows/.github/workflows/run-docker-build.yaml@main
     needs: quality
