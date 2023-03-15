@@ -11,9 +11,6 @@ jobs:
   docker-build:
     uses: thibaultserti/gh-actions-reusable-workflows/.github/workflows/run-docker-build.yaml@main
     needs: quality
-    with:
-      platforms: "linux/amd64,linux/arm64/v8"
-
   python-release:
     uses: thibaultserti/gh-actions-reusable-workflows/.github/workflows/push-python-release.yaml@main
     needs: docker-build
