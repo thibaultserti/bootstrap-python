@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/thibaultserti/bootstrap-python/compare/v1.0.0...v1.1.0) (2023-03-19)
+
+
+### Features
+
+* add signing image using Github OIDC ([e354354](https://github.com/thibaultserti/bootstrap-python/commit/e35435451046c4f512f82eb58d0db75b96b276a2))
+
 # 1.0.0 (2023-03-15)
 
 
