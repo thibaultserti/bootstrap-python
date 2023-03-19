@@ -21,7 +21,11 @@ jobs:
   docker-release:
     uses: thibaultserti/gh-actions-reusable-workflows/.github/workflows/push-docker-release.yaml@main
     needs: python-release
+    permissions:
+      id-token: write # This is required for requesting the JWT
+      packages: write
     with:
       release: ${{ needs.python-release.outputs.new_release_version}}
-      pre-built-image: true
+      use-prebuilt-image: true
+      enable-signing: true
       platforms: "linux/amd64,linux/arm64/v8"
