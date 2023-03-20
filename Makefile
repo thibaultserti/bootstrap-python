@@ -94,6 +94,12 @@ tests: ## Tests
 	@poetry run python -m pytest tests/; \
 	$(call check_output,$$?)
 
+.PHONY: coverage
+coverage: ## Coverage
+	@echo "Running coverage..."
+	@poetry run python -m coverage run -m pytest -v tests/; \
+	$(call check_output,$$?)
+
 .PHONY: format
 format: ## Format
 	@echo "Running black..."
@@ -110,8 +116,7 @@ lint: ## Lint
 	$(call check_output,$$?)
 
 .PHONY: quality
-quality: format lint tests  ## Run all quality
-
+quality: format lint  ## Run all quality
 
 .PHONY: run
 run: # Run

@@ -4,10 +4,16 @@ on:
   pull_request:
     branches:
       - main
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.txt'
 
 jobs:
   quality:
     uses: thibaultserti/gh-actions-reusable-workflows/.github/workflows/run-python-quality.yaml@main
+    secrets: inherit
+    permissions:
+      security-events: write
   docker-build:
     uses: thibaultserti/gh-actions-reusable-workflows/.github/workflows/run-docker-build.yaml@main
     needs: quality
