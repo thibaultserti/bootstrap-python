@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/thibaultserti/bootstrap-python/compare/v1.1.0...v1.2.0) (2023-03-20)
+
+
+### Features
+
+* add coverage ([d5f0d58](https://github.com/thibaultserti/bootstrap-python/commit/d5f0d5814d89e7e8ead73185e34be0d69d05c860))
+
 # [1.1.0](https://github.com/thibaultserti/bootstrap-python/compare/v1.0.0...v1.1.0) (2023-03-19)
 
 
