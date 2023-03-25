@@ -81,7 +81,7 @@ docker-run: ## Docker run
 docker-debug-run: ## Docker debug run
 	@docker run -it --rm -p $(PORT):$(PORT) $(IMAGE_NAME)-debug:latest
 
-##@ Go
+##@ Python
 
 .PHONY: dep
 dep: ## Download deps in .venv/
