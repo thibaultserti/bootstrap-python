@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/thibaultserti/bootstrap-python/compare/v1.2.0...v1.2.1) (2023-08-13)
+
+
+### Bug Fixes
+
+* typo in makefile [skip ci] ([9b47664](https://github.com/thibaultserti/bootstrap-python/commit/9b47664ca7f1c13514acb01e3966fe523f55d02b))
+
 # [1.2.0](https://github.com/thibaultserti/bootstrap-python/compare/v1.1.0...v1.2.0) (2023-03-20)
 
 
