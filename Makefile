@@ -66,26 +66,19 @@ check: check-python check-poetry check-docker ## Check utils requirements are in
 ##@ Docker
 
 .PHONY: Docker
-build: ## Docker
+docker: ## Docker
 	@docker build . -t $(IMAGE_NAME):latest
-
-.PHONY: Docker debug
-build-debug: Docker debug
-	@docker build . -f Dockerfile.debug  -t $(IMAGE_NAME)-debug:latest
-
-.PHONY: Docker run
-docker: ## Docker run
 	@docker run -it --rm -p $(PORT):$(PORT) $(IMAGE_NAME):latest
 
-.PHONY: Docker debug run
-docker-debug: ## Docker debug run
+.PHONY: Docker debug
+docker-debug: ## Docker debug
+	@docker build . -f Dockerfile.debug  -t $(IMAGE_NAME)-debug:latest
 	@docker run -it --rm -p $(PORT):$(PORT) $(IMAGE_NAME)-debug:latest
 
-.PHONY: Docker debug run
-docker-compose:  ## Docker compose build and run
+.PHONY: Docker compose
+docker-compose: ## Docker compose
 	@docker-compose build
 	@docker-compose run
-
 
 ##@ Python
 
