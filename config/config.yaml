@@ -1,2 +1,5 @@
+env: dev
+logLevel: info
+
 hostname: localhost
 port: 8080

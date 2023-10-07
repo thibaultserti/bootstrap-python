@@ -66,20 +66,26 @@ check: check-python check-poetry check-docker ## Check utils requirements are in
 ##@ Docker
 
 .PHONY: Docker
-docker: ## Docker
+build: ## Docker
 	@docker build . -t $(IMAGE_NAME):latest
 
 .PHONY: Docker debug
-docker-debug: Docker debug
+build-debug: Docker debug
 	@docker build . -f Dockerfile.debug  -t $(IMAGE_NAME)-debug:latest
 
 .PHONY: Docker run
-docker-run: ## Docker run
+docker: ## Docker run
 	@docker run -it --rm -p $(PORT):$(PORT) $(IMAGE_NAME):latest
 
 .PHONY: Docker debug run
-docker-debug-run: ## Docker debug run
+docker-debug: ## Docker debug run
 	@docker run -it --rm -p $(PORT):$(PORT) $(IMAGE_NAME)-debug:latest
+
+.PHONY: Docker debug run
+docker-compose:  ## Docker compose build and run
+	@docker-compose build
+	@docker-compose run
+
 
 ##@ Python
 
@@ -91,28 +97,28 @@ dep: ## Download deps in .venv/
 .PHONY: tests
 tests: ## Tests
 	@echo "Running tests..."
-	@poetry run python -m pytest tests/; \
+	@poetry run python -m pytest src/tests/; \
 	$(call check_output,$$?)
 
 .PHONY: coverage
 coverage: ## Coverage
 	@echo "Running coverage..."
-	@poetry run python -m coverage run -m pytest -v tests/; \
+	@poetry run python -m coverage run -m pytest -v src/tests/; \
 	$(call check_output,$$?)
 
 .PHONY: format
 format: ## Format
 	@echo "Running black..."
-	@poetry run python -m black src/ tests/; \
+	@poetry run python -m black src/; \
 	$(call check_output,$$?)
 
 .PHONY: lint
 lint: ## Lint
 	@echo "Running pylint..."
-	@poetry run python -m pylint -vv src/ tests/; \
+	@poetry run python -m pylint -vv src/ ; \
 	$(call check_output,$$?)
 	@echo "Running mypy"
-	@poetry run python -m mypy --install-types --non-interactive src/ tests/; \
+	@poetry run python -m mypy --install-types --non-interactive src/ ; \
 	$(call check_output,$$?)
 
 .PHONY: quality
@@ -120,4 +126,4 @@ quality: format lint  ## Run all quality
 
 .PHONY: run
 run: # Run
-	@poetry run python main.py; \
+	@poetry run python src/app/main.py; \
