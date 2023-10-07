@@ -20,6 +20,7 @@ if __name__ == "__main__":
         formatter = logging.Formatter(
             "{'time':'%(asctime)s', 'name': '%(name)s', 'level': '%(levelname)s', 'message': '%(message)s'}"
         )
+
     try:
         logger.setLevel(config.logLevel.upper())
     except ValueError:
