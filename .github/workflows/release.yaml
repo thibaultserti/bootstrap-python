@@ -11,12 +11,9 @@ jobs:
     secrets: inherit
     permissions:
       security-events: write
-  docker-build:
-    uses: thibaultserti/gh-actions-reusable-workflows/.github/workflows/run-docker-build.yaml@main
-    needs: quality
   python-release:
     uses: thibaultserti/gh-actions-reusable-workflows/.github/workflows/push-python-release.yaml@main
-    needs: docker-build
+    needs: quality
     permissions:
       contents: write
       issues: write
@@ -29,6 +26,6 @@ jobs:
       packages: write
     with:
       release: ${{ needs.python-release.outputs.new_release_version}}
-      use-prebuilt-image: true
+      use-prebuilt-image: false
       enable-signing: true
       platforms: "linux/amd64,linux/arm64/v8"
