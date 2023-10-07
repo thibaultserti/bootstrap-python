@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/thibaultserti/bootstrap-python/compare/v1.3.0...v1.3.1) (2023-10-07)
+
+
+### Bug Fixes
+
+* trigger release ([71af39f](https://github.com/thibaultserti/bootstrap-python/commit/71af39f339fbfd0ca891447f88dcaca2f72b9c28))
+
 # [1.3.0](https://github.com/thibaultserti/bootstrap-python/compare/v1.2.1...v1.3.0) (2023-10-07)
 
 
