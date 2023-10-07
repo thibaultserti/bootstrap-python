@@ -22,7 +22,7 @@ if __name__ == "__main__":
         )
     try:
         logger.setLevel(config.logLevel.upper())
-    except Exception as e:
+    except ValueError:
         logger.critical("Cannot read config: logLevel")
         sys.exit(1)
 
