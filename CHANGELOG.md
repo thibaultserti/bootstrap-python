@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/thibaultserti/bootstrap-python/compare/v1.2.1...v1.3.0) (2023-10-07)
+
+
+### Features
+
+* reformat code, add docker-compose, improve logging ([cf88a8a](https://github.com/thibaultserti/bootstrap-python/commit/cf88a8ae67d3ea519d0e670486e0d612908aaedf)), closes [#8](https://github.com/thibaultserti/bootstrap-python/issues/8) [#9](https://github.com/thibaultserti/bootstrap-python/issues/9) [#10](https://github.com/thibaultserti/bootstrap-python/issues/10)
+
 ## [1.2.1](https://github.com/thibaultserti/bootstrap-python/compare/v1.2.0...v1.2.1) (2023-08-13)
 
 
