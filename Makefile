@@ -78,7 +78,7 @@ docker-debug: ## Docker debug
 .PHONY: Docker compose
 docker-compose: ## Docker compose
 	@docker-compose build
-	@docker-compose run
+	@docker-compose up
 
 ##@ Python
 
